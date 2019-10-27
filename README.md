@@ -18,5 +18,5 @@ Client for yandex translator api.
 - Для перевода используйте метод  .translate(text : "YOUR TEXT", lang: "FINISH LANGUAGE")  
 - Для получения списка всех доступных языков с кодами, используйте метод  .languages  
 
-Содействие
+Содействие . 
 Отчеты об ошибках и запросы на улучшения гема приветствуются на GitHub в https://github.com/teeara1991/yandex_translator_api.git
