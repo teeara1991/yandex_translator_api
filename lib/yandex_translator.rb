@@ -28,7 +28,8 @@ module YandexTranslator
   end
   # client yandex api translate
   class Api
-
+    include Singleton
+    
     def configurate(options = {})
       Config.api_key = options[:api_key]
       Config.default_lang = options[:default_lang] || 'en'
@@ -59,7 +60,7 @@ module YandexTranslator
 end
 
 # example
-# api = YandexTranslator::Api.new
+# api = YandexTranslator::Api.instance
 # api.configurate(api_key: 'trnsl.1.1.20191023T101011Z.d0ab8730fe62b788.be13f4dcbdd74247838474a096b5a4dbe82384fc', default_lang: 'ru')
 # api.translate(text: 'Hello world', lang: 'zh')
 # api.languages
