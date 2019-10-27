@@ -9,6 +9,7 @@ module YandexTranslator
   # configuration
   class Config
     attr_accessor :api_key, :default_lang
+    
     def self.api_key
       @api_key
     end
