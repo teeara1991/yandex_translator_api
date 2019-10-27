@@ -13,7 +13,7 @@ Client for yandex translator api.
 
 Работа   
 - Подключите yandex_translator в ваш проект , require 'yandex_translator'  
-- Создайте обьект типа api = YandexTranslator::Api.new  
+- Создайте обьект типа api = YandexTranslator::Api.instance 
 - Для создания первоначальной конфигурации используйте метод  .configurate(api_key : "YOUR KEY",default_lang : "EN") (обязательно) 
 - Для перевода используйте метод  .translate(text : "YOUR TEXT", lang: "FINISH LANGUAGE")  
 - Для получения списка всех доступных языков с кодами, используйте метод  .languages  
