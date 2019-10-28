@@ -4,7 +4,7 @@ Client for yandex translator api.
 Установка
 - Склонируйте на ваше устройство репозиторий https://github.com/teeara1991/yandex_translator_api.git  
 - Зайдите в папку и найдите файл yandex_translator-1.0.gem  
-- Откройте терминал, убедитесь, что находитесь в папке с файлом yandex_translator-1.0.gem,
+- Откройте терминал, убедитесь, что находитесь в папке с файлом yandex_translator-1.0.gem, 
 выполните команду gem install --local yandex_translator
 
 Получение ключа яндекс
@@ -13,9 +13,12 @@ Client for yandex translator api.
 Работа
 - Подключите yandex_translator в ваш проект, require 'yandex_translator'  
 - Создайте обьект типа api = YandexTranslator::Api.new 
-- Для создания первоначальной конфигурации используйте метод  .configurate(api_key: "YOUR KEY",default_lang: "en") (обязательно) 
+- Для создания первоначальной конфигурации используйте метод  .configurate(api_key: "YOUR KEY", default_lang: "en") (обязательно) 
 - Для перевода используйте метод  .translate(text: "YOUR TEXT", lang: "FINISH LANGUAGE")  
 - Для получения списка всех доступных языков с кодами, используйте метод  .languages  
+
+Особенности
+- параметры default_lang и lang необходимо передавать в нижнем регистре. "ru", "en", "zh"
 
 Содействие  
 Отчеты об ошибках и запросы на улучшения гема приветствуются на GitHub в https://github.com/teeara1991/yandex_translator_api.git
