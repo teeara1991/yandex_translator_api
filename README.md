@@ -1,13 +1,13 @@
 Client for yandex translator api.   
 Яндекс переводчик
 
-Установка 
-Способ 1
+Установка  
+Способ 1  
 - Склонируйте на ваше устройство репозиторий https://github.com/teeara1991/yandex_translator_api.git  
 - Зайдите в папку и найдите файл yandex_translator_api-1.1.gem  
 - Откройте терминал, убедитесь, что находитесь в папке с файлом yandex_translator_api-1.1.gem, 
 выполните команду gem install --local yandex_translator_api
-Способ 2
+Способ 2  
 - Откройте терминал и выполните команду gem install yandex_translator_api
 
 Получение ключа яндекс  
@@ -19,7 +19,6 @@ Client for yandex translator api.
 - Для создания первоначальной конфигурации используйте метод  .configurate(api_key: "YOUR KEY", default_lang: "en") (обязательно) 
 - Для перевода используйте метод  .translate(text: "YOUR TEXT", lang: "FINISH LANGUAGE")  
 - Для получения списка всех доступных языков с кодами, используйте метод  .languages  
-
 
 Особенности  
 - параметры default_lang и lang необходимо передавать в нижнем регистре. "ru", "en", "zh"
