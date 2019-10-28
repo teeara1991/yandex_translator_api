@@ -5,7 +5,7 @@ require 'uri'
 require 'json'
 require 'singleton'
 
-module YandexTranslator
+module YandexTranslatorApi
   # configuration
   class Config
     include Singleton
@@ -21,6 +21,10 @@ module YandexTranslator
 
     def self.default_lang
       @default_lang
+    end
+
+    def self.default_lang=(default_lang)
+      @default_lang = default_lang
     end
   end
   # client yandex api translate
@@ -56,7 +60,7 @@ module YandexTranslator
 end
 
 # example
-# api = YandexTranslator::Api.new
+# api = YandexTranslatorApi::Api.new
 # api.configurate(api_key: 'trnsl.1.1.20191023T101011Z.d0ab8730fe62b788.be13f4dcbdd74247838474a096b5a4dbe82384fc', default_lang: 'ru')
 # api.translate(text: 'Hello world', lang: 'zh')
 # api.languages
