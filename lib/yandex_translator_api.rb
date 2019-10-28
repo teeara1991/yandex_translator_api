@@ -11,19 +11,19 @@ module YandexTranslatorApi
     include Singleton
     attr_accessor :api_key, :default_lang
 
-    def self.api_key
+    def api_key
       @api_key
     end
 
-    def self.api_key=(api_key)
+    def api_key=(api_key)
       @api_key = api_key
     end
 
-    def self.default_lang
+    def default_lang
       @default_lang
     end
 
-    def self.default_lang=(default_lang)
+    def default_lang=(default_lang)
       @default_lang = default_lang
     end
   end
@@ -31,17 +31,18 @@ module YandexTranslatorApi
   class Api
     
     def configurate(options = {})
-      Config.api_key = options[:api_key]
-      Config.default_lang = options[:default_lang] || 'en'
+      @conf = Config.instance
+      @conf.api_key = options[:api_key]
+      @conf.default_lang = options[:default_lang] || 'en'
     rescue StandardError
       'Input data error. Please check input data.'
     end
 
     def translate(options = {})
-      lang = options[:lang] || Config.default_lang || 'ru'
+      lang = options[:lang] || @conf.default_lang || 'ru'
       text = options[:text] || 'Hello'
       uri = URI('https://translate.yandex.net/api/v1.5/tr.json/translate?' \
-        "key=#{Config.api_key}&lang=#{lang}&text=#{URI.encode(text)}")
+        "key=#{@conf.api_key}&lang=#{lang}&text=#{URI.encode(text)}")
       res = Net::HTTP.get(uri)
       JSON.parse(res)['text']
     rescue StandardError
@@ -50,7 +51,7 @@ module YandexTranslatorApi
 
     def languages
       uri = URI('https://translate.yandex.net/api/v1.5/tr.json/getLangs?' \
-        "key=#{Config.api_key}&ui=en")
+        "key=#{@conf.api_key}&ui=en")
       res = Net::HTTP.get(uri)
       JSON.parse(res)['langs']
     rescue StandardError

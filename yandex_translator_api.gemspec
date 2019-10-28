@@ -1,6 +1,6 @@
-Gem::Specification.new "yandex_translator_api", "1.0" do |s|
+Gem::Specification.new "yandex_translator_api", "1.1" do |s|
   s.name = %q{yandex_translator_api}
-  s.version = "1.0"
+  s.version = "1.1"
   s.date = %q{2019-10-26}
   s.summary = %q{Yandex Translator Api is the best}
   s.files = [
