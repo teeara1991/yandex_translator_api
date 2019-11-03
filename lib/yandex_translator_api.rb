@@ -10,22 +10,6 @@ module YandexTranslatorApi
   class Config
     include Singleton
     attr_accessor :api_key, :default_lang
-
-    def api_key
-      @api_key
-    end
-
-    def api_key=(api_key)
-      @api_key = api_key
-    end
-
-    def default_lang
-      @default_lang
-    end
-
-    def default_lang=(default_lang)
-      @default_lang = default_lang
-    end
   end
   # client yandex api translate
   class Api
